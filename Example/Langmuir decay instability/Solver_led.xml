@@ -1,0 +1,61 @@
+<Solver device="GPU">
+  <Grid>
+    <xmax>4021.2385965949</xmax>
+    <xngrids>8192</xngrids>
+    <velGrid name="electron">
+      <vmin>-12</vmin>
+      <vmax>20</vmax>
+      <vngrids>340</vngrids>
+    </velGrid>
+    <velGrid name="proton">
+      <vmin>-4</vmin>
+      <vmax>4</vmax>
+      <vngrids>256</vngrids>
+    </velGrid>
+  </Grid>
+  <Temporal>
+    <tstep>0.01</tstep>
+    <ntsteps>480000</ntsteps>
+  </Temporal>
+  <Boundary>
+    <type>PCHIP_periodic</type>
+    <left name="Dirichlet">1</left>
+    <right name="Dirichlet">1</right>
+  </Boundary>
+  <Config>
+    <filtration state="disable">
+      <period>1000</period>
+      <order>1</order>
+      <width>5</width>
+    </filtration>
+    <external state="enable">
+      <field type="global">
+        <magnetic>@(t, x)0</magnetic>
+        <electric>@(t, x)0</electric>
+      </field>
+      <field type="electron">
+        <magnetic>@(t, x)0</magnetic>
+        <electric>@(t, x)0.01*(1-exp(-t/30))*cos(0.15*x-t)</electric>
+      </field>
+      <field type="proton">
+        <magnetic>@(t, x)0</magnetic>
+        <electric>@(t, x)0</electric>
+      </field>
+    </external>
+    <diagnostics state="enable">
+      <path>C:\Programmer\Vlasov-simulation_new\Diagnostics\Electrostatic1D_v1.m</path>
+      <var>
+        <name>Density</name>
+        <rate>120</rate>
+      </var>
+      <var>
+        <name>Electric field</name>
+        <rate>120</rate>
+      </var>
+      <var>
+        <name>Distribution</name>
+        <rate>12000</rate>
+      </var>
+    </diagnostics>
+  </Config>
+</Solver>

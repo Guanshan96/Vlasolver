@@ -1,0 +1,36 @@
+<Solver>
+  <Grid>
+    <xmax>62.831853071796</xmax>
+    <vmax>9</vmax>
+    <vmin>-9</vmin>
+    <xngrids>128</xngrids>
+    <vngrids>256</vngrids>
+  </Grid>
+  <Temporal>
+    <tstep>0.01</tstep>
+    <ntsteps>40000</ntsteps>
+  </Temporal>
+  <Boundary>
+    <type>PCHIP_periodic</type>
+    <left name="Dirichlet">1</left>
+    <right name="Dirichlet">1</right>
+  </Boundary>
+  <Config>
+    <filtration state="disable">
+      <period>1000</period>
+      <order>1</order>
+      <width>5</width>
+    </filtration>
+    <external state="disable">
+      <magnetic>@(t, x)sin(t)</magnetic>
+      <electric>@(t, x)cos(t)</electric>
+    </external>
+    <diagnostics state="enable">
+      <path>C:\Programmer\Vlasov-simulation_new\Diagnostics\Electrostatic1D_v0.m</path>
+      <var>Density</var>
+      <var>Distribution</var>
+      <var>Total charge</var>
+      <var>Electric field</var>
+    </diagnostics>
+  </Config>
+</Solver>

@@ -1,0 +1,25 @@
+<Plasma>
+  <Specie name="electron" save="true">
+    <charge>-1</charge>
+    <cmratio>-1</cmratio>
+    <density>1</density>
+    <xdistr number="1">
+      <distr>@(x)1+0.01*cos(0.15*x)</distr>
+    </xdistr>
+    <vdistr number="2">
+      <distr>@(vx)1000*exp(-vx.^2/2)/(1001*sqrt(2*pi))</distr>
+      <distr>@(vx)exp(-(vx-8).^2/2)/(1001*sqrt(2*pi))</distr>
+    </vdistr>
+  </Specie>
+  <Specie name="proton" save="true">
+    <charge>1</charge>
+    <cmratio>0</cmratio>
+    <density>1</density>
+    <xdistr number="1">
+      <distr>@(x)1</distr>
+    </xdistr>
+    <vdistr number="1">
+      <distr>@(vx)exp(-vx.^2/0.1)/sqrt(0.1*pi)</distr>
+    </vdistr>
+  </Specie>
+</Plasma>
