@@ -1,2 +1,2 @@
-# Vlasovler
+# Vlasolver
 An electrostatic Vlasov solver
