@@ -1,2 +1,2 @@
 # Vlasolver
-An electrostatic Vlasov solver
+MATLAB version of an electrostatic Vlasov solver 
