@@ -15,38 +15,27 @@ Vlasov方程刻画了相空间体积元中代表点的密度沿方程特征线�
 
 配置文件分为两部分，其一为求解器配置文件，其一为初始条件配置文件。
 
-><Plasma>
-  <Specie name="electron" save="true">
-    <charge>-1</charge>
-    <cmratio>-1</cmratio>
-    <density>1</density>
-    <xdistr number="1">
-      <distr>@(x)1+0.01*cos(0.3*x)+0.01*cos(0.2*x)+0.01*cos(0.4*x)</distr>
-    </xdistr>
-    <vdistr number="1">
-      <distr>@(vx)30*exp(-vx.^2/2)/(31*sqrt(2*pi))</distr>
-    </vdistr>
-  </Specie>
-  <Specie name="electron" save="true">
-    <charge>-1</charge>
-    <cmratio>-1</cmratio>
-    <density>1</density>
-    <xdistr number="1">
-      <distr>@(x)1</distr>
-    </xdistr>
-    <vdistr number="1">
-      <distr>@(vx)exp(-(vx-6).^2/1)/(31*sqrt(pi))</distr>
-    </vdistr>
-  </Specie>
-  <Specie name="proton" save="true">
-    <charge>1</charge>
-    <cmratio>0.1</cmratio>
-    <density>1</density>
-    <xdistr number="1">
-      <distr>@(x)1+0.01*cos(0.3*x)+0.01*cos(0.2*x)+0.01*cos(0.4*x)</distr>
-    </xdistr>
-    <vdistr number="1">
-      <distr>@(vx)exp(-vx.^2/2)/sqrt(2*pi)</distr>
-    </vdistr>
-  </Specie>
-</Plasma>
+>\<Plasma\>
+  \<Specie name="electron" save="true"\>
+    \<charge\>-1\</charge\>
+    \<cmratio\>-1\</cmratio\>
+    \<density\>1\</density\>
+    \<xdistr number="1"\>
+      \<distr\>@(x)1+0.01*cos(0.3*x)+0.01*cos(0.2*x)+0.01*cos(0.4*x)\</distr\>
+    \</xdistr\>
+    \<vdistr number="1"\>
+      \<distr\>@(vx)30*exp(-vx.^2/2)/(31*sqrt(2*pi))\</distr\>
+    \</vdistr\>
+  \</Specie\>
+  \<Specie name="proton" save="true"\>
+    \<charge\>1\</charge\>
+    \<cmratio\>0.1\</cmratio\>
+    \<density\>1\</density\>
+    \<xdistr number="1"\>
+      \<distr\>@(x)1+0.01*cos(0.3*x)+0.01*cos(0.2*x)+0.01*cos(0.4*x)\</distr\>
+    \</xdistr\>
+    \<vdistr number="1"\>
+      \<distr\>@(vx)exp(-vx.^2/2)/sqrt(2*pi)\</distr\>
+    \</vdistr\>
+  \</Specie\>
+\</Plasma\>
